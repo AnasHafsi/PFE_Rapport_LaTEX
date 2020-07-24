@@ -1,0 +1,57 @@
+\documentclass[a4paper, french, 12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{nccmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{eso-pic}
+
+\usepackage[margin=2cm, bottom=1.5cm, includefoot, footskip=30pt]{geometry}
+\usepackage[pdftex, pdfborder={0 0 0}]{hyperref}
+
+\renewcommand{\chaptername}{Chapitre}
+
+
+
+\begin{document}
+\title{RappoRrt APFEE}
+\author{Anas HAFSII}
+\date{July 2020}
+\maketitle
+
+\renewcommand{\abstractname}{Résumé}
+\begin{abstract}
+  \input{sections/abstract}
+\end{abstract}
+
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+  this is abstract
+\end{abstract}
+
+\tableofcontents
+\part{Contexte général du projet}
+\part{Gestion de projet et analyse fonctionnelle}
+\part{Etude technique et réalisations}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Chapter Two Title}
+\input{chapters/chapter02}
+
+\chapter{Chapter Three Title}
+\input{chapters/chapter03}
+
+\chapter{Chapter Four Title}
+\input{chapters/chapter04}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+\end{document}
