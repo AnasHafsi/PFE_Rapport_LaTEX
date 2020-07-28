@@ -1,4 +1,3 @@
 *.aux
 *.f*
-*.aux
-*.aux
+*.log
