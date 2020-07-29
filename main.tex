@@ -37,18 +37,13 @@
 
 \makeatletter
 \title{Rapport du projet de fin d'études}\let\title\@title
-\newcommand{\subtitle}{Implémentation séquentielle et distribuée du Flocon de Von Koch et du dragon de Levy}
+\newcommand{\subtitle}{Master Data Management - Media Plus Core}
 \newcommand{\years}{2019 - 2020}
 \newcommand{\footpage}{ Page \thepage \ / \pageref{LastPage}}
 
 % CONFIG 
 
-\fancyhead[L]{}
-\fancyhead[C]{}
-\fancyhead[R]{}
-\fancyfoot[L]{\title}
-\fancyfoot[C]{\footpage}
-\fancyfoot[R]{\years}
+
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -72,17 +67,37 @@
   \input{sections/titlepage.tex}
 \end{titlepage}
 
-\renewcommand{\abstractname}{Résumé}
-\begin{abstract}
-  \input{sections/abstract}
-\end{abstract}
 
-\renewcommand{\abstractname}{Abstract}
-\begin{abstract}
-  this is abstract
-\end{abstract}
+\ClearShipoutPicture
+\newpage
+
+
+% ----------------------------------------------------------------------------------------
+%                                 Report essential Sections
+% ----------------------------------------------------------------------------------------
+
+\input{sections/dedicace}
+\input{sections/remerciements}
+\input{sections/resume}
+\input{sections/abstract}
+
+% ----------------------------------------------------------------------------------------
+%                                 Tables of Content/tables/figures
+% ----------------------------------------------------------------------------------------
 
 \tableofcontents
+\listoftables
+\listoffigures
+
+\fancyhead{}
+\fancyhead[RO,LE]{Rapport PFE}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapitre \thechapter}
+\fancyfoot[CO,RE]{Anas HAFSI}
+
+\input{chapters/introduction}
+\addcontentsline{toc}{part}{Introduction}
 \part{Contexte général du projet}
 \input{chapters/chapter01.tex}
 \part{Gestion de projet et analyse fonctionnelle}

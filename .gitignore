@@ -1,6 +1,6 @@
 *.aux
 *.f*
-*.log
+*.lo*
 *.out
 *.toc
 *.gz
