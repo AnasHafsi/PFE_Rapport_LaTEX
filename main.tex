@@ -21,11 +21,11 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
+\usepackage{pdfpages}
 \usepackage{perpage}
 \MakePerPage{footnote}
 \usepackage{tabto}
 \usepackage{tabularx}
-
 
 \AddThinSpaceBeforeFootnotes
 \FrenchFootnotes
@@ -45,7 +45,7 @@
 % CONFIG 
 
 
-
+\@addtoreset{chapter}{part}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -83,14 +83,18 @@
 \input{sections/abstract}
 
 % ----------------------------------------------------------------------------------------
-%                                 Tables of Content/tables/figures
+%                                 Tables of Content/tables/figures/abrv
 % ----------------------------------------------------------------------------------------
 
 \tableofcontents
 \listoftables
 \listoffigures
-
 \input{sections/abreviations}
+
+% ----------------------------------------------------------------------------------------
+%                                 Head/Foot Configuration
+% ----------------------------------------------------------------------------------------
+
 \fancyhead{}
 \fancyhead[RO,LE]{Rapport PFE}
 \fancyfoot{}
@@ -98,11 +102,15 @@
 \fancyfoot[LO,CE]{Partie \thepart\ Chapitre \thechapter}
 \fancyfoot[CO,RE]{Anas HAFSI}
 
+% ----------------------------------------------------------------------------------------
+%                                 Parts/Chapters
+% ----------------------------------------------------------------------------------------
 \input{chapters/introduction}
 \addcontentsline{toc}{part}{Introduction}
 \part{Contexte général du projet}
 \input{chapters/chapter01.tex}
 \part{Gestion de projet et analyse fonctionnelle}
+\input{chapters/chapter02.tex}
 \part{Etude technique et réalisations}
 
 \input{chapters/chapter03.tex}
