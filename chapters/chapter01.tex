@@ -2,16 +2,15 @@
 
 
 
-\chapter{Organisme d’accueil : Finaxys} % Main chapter title
+\chapter{Organisme d’accueil : Finaxys}
 
-\label{Chapter01} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+\label{Chapter01}
 
 \par
 Avant d'entamer l’analyse du projet il est essentiel de commencer par une présentation générale des entités d’accueil, ceci en introduisant l'historique, les produits ainsi que le déroulement. Et donc par conséquent, Cette première partie du rapport est une présentation sommaire du contexte de notre projet de fin d’études. Il comporte deux chapitres : dans le premier, nous allons présenter l’entreprise d’accueil Finaxys, puis nous allons présenter Amundi Asset Manager, le client de Finaxys chez lequel j'ai pu réaliser le projet.
-Chaque chapitre est subdivisé en plusieurs sections : nous exposeront l'historique de chaque entreprise, nous allons dévoiler les chiffres clés démontrant son succès économique. Nous allons ensuite expliquer brièvement l'organisation fonctionnelle et le déroulement du premier mois du stage depuis les premieres formations et jusqu'à la recherche de mission. Dans la seconde partie, nous présenterons notre client et développerons le cadre général du projet MediaPlusCore ainsi que celui d'Alto Investment Research sans pour autant présenter en détail les deux projets.
+\par Chaque chapitre est subdivisé en plusieurs sections : nous exposeront l'historique de chaque entreprise, nous allons dévoiler les chiffres clés démontrant son succès économique. Nous allons ensuite expliquer brièvement l'organisation fonctionnelle et le déroulement du premier mois du stage depuis les premieres formations et jusqu'à la recherche de mission. Dans la seconde partie, nous présenterons notre client et développerons le cadre général du projet MediaPlusCore ainsi que celui d'Alto Investment Research sans pour autant présenter en détail les deux projets.
 \\~\\
-\par
-Finaxys est une société de consultants spécialisée en IT finance, banque et assurance. Elle permet aux acteurs de ce marché de bénéficier d’experts pour l’analyse, le cadrage et la définition des projets IT, comme pour leur déploiement et implémentation.
+\par Finaxys est une société de consultants spécialisée en IT finance, banque et assurance. Elle permet aux acteurs de ce marché de bénéficier d’experts pour l’analyse, le cadrage et la définition des projets IT, comme pour leur déploiement et implémentation.
 
 \section{Présentation}
 
@@ -19,10 +18,6 @@ Fondée en 2007, FINAXYS est une société de conseil spécialisée en IT financ
 \par Depuis janvier 2010, FINAXYS suit sa transformation des systèmes d’information et la massification des prestations IT de ses clients par la mise en place des centres de service sur-mesure. De plus, en 2011, cette dernière a pu enrichir, développer et diversifier ses offres avec l’acquisition de NOVACTOR, société de conseil spécialisé en méthodologie outsourcing et sécurité IT. 
 \par Dans le but de développer ses activités à l’échelle internationale, FINAXYS a lancé une première filiale à Londres en 2010, puis une autre filiale BRAINS, début 2013, dédiée aux innovations technologiques dans les domaines de la mobilité, réseaux sociaux, cloud computing et Big Data et également un bureau à Bruxelles en janvier 2014.
 \par FINAXYS a décidé de s’investir dans le domaine de la recherche et développement par l’acquisition de la start-up ScaledRisk, spécialisée dans les solutions Big Data transactionnelles et temps réel pour les institutions financières.
-
-%-----------------------------------
-%	section 2
-%-----------------------------------
 
 \subsection{Domaine d'activité}
 FINAXYS accompagne ses clients sur l’ensemble du cycle de vie projet, du cadrage à la recette, accompagné d’une démarche qualité intégrée. FINAXYS est reconnue dans une large palette d’expertises et intervient dans nombreux domaines dont nous citons :
@@ -43,7 +38,6 @@ FINAXYS accompagne ses clients sur l’ensemble du cycle de vie projet, du cadra
 \par Nous avions ainsi accès à la plateforme de formation PluralSight. Cette plateforme offre des formations vidéos et des supports pour se perfectionner sur plusieurs technologies, langages, modèles de programmation et architecture en accès illimité pendant notre formation.
 \par PluralSight représente moins de 20\% de la totalité de la formation du mois d'incubation. Le reste a été assuré par les différents ingénieurs de Finaxys notamment Lionel Beltrando pour la partie Blockchain, Nacim Kacel pour la formation SOLID, TDD et Patterns et finalement Rachid Agoudar responsable de la DT Finaxys sur toutes les autres formations (Big Data, Data science, DDD, sécurité, POO, DevOps \dots).  \\
 Chaque session d'e-learning a été accompagnée d'une deuxième session avec un ingénieur pour fixer ce qui a été acquis sur PluralSight ainsi que d'un mini-rapport.
-
 
 \subsection{Programme de formation}
 \input{chapters/chapter1/programmeFormation}
@@ -96,28 +90,71 @@ Le groupe Amundi possède des bureaux dans plusieurs pays du monde, notamment en
 
 \section{Asset Management}
 
-\par L'Asset Management, en français, "Gestion d'Actifs" est sans aucun doute la seule partie des marchés financiers connue de tous le monde. Peut-être pas le terme Asset Management en lui-même, mais à coup sûr les produits qui en émanent.
-\par Un Asset Manager est en effet la société, le plus souvent filiale d'une banque ou d'un assureur (le statut de filiale est obligatoire depuis 1999), qui crée et gère au quotidien les produits de placements dont chacun de nous voit la publicité sur les devantures de toutes les agences de banques et d'assurances : les OPCVM, organismes de placement collectif en valeurs mobilières (SICAV et FCP), ou plus généralement les produits d'épargne collective.
-\par Plus simplement, l'Asset Manager est la société à qui les particuliers et les entreprises peuvent confier de l'argent pour qu'il soit géré au travers d'un fonds, qui est le véhicule de placement. Les Asset Managers font donc de la « gestion pour compte de tiers ».
-\par Ainsi, les principaux clients des sociétés de gestion sont :
+
+\par Un Asset Manager (En français société de gestion) est le plus souvent filiale d’une banque ou d’un assureur qui gère au quotidien l’argent des particuliers ou des entreprises. 
+\clearpage
+\par Les principaux clients des sociétés de gestion sont alors des caisses de retraites, des entreprises souhaitant placer leurs excédents de trésorerie, des banques. La gestion pour compte des tiers se divise en deux parties : la gestion collective (les produits proposés par cette dernière sont des OPCVM), la gestion sous mandat (en général un contrat entre la société de gestion et un seul client qui détient tout l’actif du fonds). 
+\par La gestion traditionnelle regroupe 5 grandes familles d’OPCVM :
 \begin{itemize}
-    \item Des entreprises souhaitant placer leurs excédents de trésorerie
-    \item Des Caisses de Retraites
-    \item Des institutions financières investissant pour compte propre ou distribuant les OPCVM à leurs clients (Retail, banque privée, banque de grande clientèle…) 
+    \item Les fonds « Monétaires » correspondent à des placements court-terme avec un risque faible de perte.
+    \item Les fonds « Obligataires » correspondent à des placements moyen/long terme. La majorité du montant de ces fonds est investie en obligations. Le niveau de risque du fonds dépendra de l’évolution du taux d’intérêt et de la qualité des titres achetés (selon les notes données par les agences de notation, cela ira du très faible risque en achetant des titres notés « AAA » au risque fort sur des obligations d’états ou d’entreprise en difficultés financières).
+    \item Les fonds « Actions » correspondent à un placement long terme, avec un risque très important.
+    \item Les fonds « Diversifiés » correspondent à un placement moyen/long terme et peuvent mélanger du monétaires, des obligataires et des actions.
+    \item Les fonds « ISR » : Investissement Socialement Responsable. Le risque de ces fonds est souvent important car principalement investis en actions d’entreprises écoresponsables.
 \end{itemize}
 
-\par Les clients d'un Asset Manager sont donc sensiblement les mêmes (hors Retail) que ceux d'une BFI. Alors que la gestion d'actif adressera plutôt une offre d'épargne packagée, souvent à moyen ou long terme, les BFI axeront plutôt leur offre sur du conseil lors d'opérations de haut de bilan, plutôt à court terme.
+\subsection{Organisation d'un Asset Manager}
+\par Tout les asset manager ont une organisation bien particulière. Ont peut les subdiviser en trois parties : Front Office, Middle Office et Back Office.
+\begin{itemize}
+    \item Front Office : Le Front Office est constitué des gérants, des négociateurs et des analystes financiers. Un gérant décide des ordres à passer tout en respectant les contraintes réglementaires et les éventuelles contraintes spécifiées par les clients. Un gérant passe le plus souvent par des négociateurs pour exécuter leurs ordres sur le marché en s’appuyant sur les études des analystes financières.  
+    \item Middle Office : Une fois qu’un ordre a été exécuté sur le marché, le Middle Office s’occupe du règlement et de la livraison.  
+    \item Back Office : Dès qu’une opération a été validée par le middle office, l’opération est transférée au Back Office pour être pris en compte dans la comptabilité du portefeuille. Le Back Office valorise quotidiennement les fonds.  
+\end{itemize}
+
+\subsection{Risk Management}
+Risk management ou directions des risques sont des analyses indispensables dans un Asset Manager. Ils analysent généralement les risques suivants : 
+\begin{itemize}
+    \item Risque de marché : risque de perte pouvant résulter d’une évolution négative des instruments financiers composant un portefeuille, ce risque est mesuré par la TE et la VaR.  
+    \item Risque de crédit/contrepartie : risque qu’un emprunteur ne puisse pas rembourser sa dette à échéance.  
+    \item Risque de liquidité : risque de ne pas pouvoir se refinancer, soit par manque d’acheteurs, soit par manque de cash sur le marché monétaire.  
+    \item Risque opérationnel : risque de perte financière lié à des événements non financiers.
+\end{itemize} 
+
+\subsection{Conformité et Contrôle Interne} 
+Les directives suivantes assurent le respect de la réglementation, de la transparence, de l’absence de conflits d’intérêts au sein de l’organisation, et de la lutte anti-blanchiment:
+\begin{itemize}
+    \item Juridique : Respect des lois applicables aux activités bancaires et financières. Conseil avant la création, modification ou dissolution d’un fonds ou de l’utilisation d’un instrument financier.  
+    \item Ingénierie et Marketing Produits : Analyse marketing sur le marché qui permet d’anticiper l’attrait des investisseurs pour telle classe d’actifs ou tel style de gestion.  
+    \item Reporting, Calcul et Attribution de Performance : notions sur lesquels les clients notent leur société de gestion, c’est-a-dire l’évolution de la VL* d’un fonds. Le reporting consiste à diffuser les données de performance et les données comptables au client.  
+    \item Ventes et Services Clients : pilotent les relations commerciales entre la société de gestion et ses clients.
+\end{itemize}
+
+
+\subsection{Système d’information (IT)} 
+\par D’un point de vue informatique, il faut limiter l’intervention humaine en automatisant les tâches pour un besoin de traitement de plus en plus rapide des opérations sur le marché. Les asset managers ont eu donc recours à des systèmes d’information développés. La réussite de leur implémentation est possible grâce des équipes mis en place : 
+\begin{itemize}
+    \item La MOA qui synthétise les besoins des utilisateurs des logiciels, est ainsi garante de la conformité du produit finit par rapports aux besoins des utilisateurs.  
+    \item La MOE  qui doit comprendre le besoin exprimé par la MOA et le réaliser dans les meilleurs délais.
+\end{itemize} 
+ 
+\subsection{Référentiels} 
+\par Dans tout projet, de quelque importance qu'il soit, un SI ne pourra fonctionner que s'il a de bonnes données en entrée. Ces données sont stockées dans des Référentiels. La qualité d'un référentiel tient à la qualité de ses données (sources, fréquence de mise à jour, …) mais aussi à sa facilité d'interrogation et à son évolutivité.
+\begin{itemize}
+    \item Référentiel Valeurs : contient toutes les Titres et Contrats négociables par les gérants dans les systèmes. Dans la théorie aucun produit financier ne peut être négocié par un Asset Manager s'il n'existe pas dans son Référentiel Valeurs. Un gros Asset Manager aura un Référentiel contenant plus de 5000 Titres et largement autant de contrats. Pour chaque Titre, le nombre d'informations le caractérisant est très important. Il y a des données statiques (qui restent identiques durant toute la vie du Titre) et les données dynamiques (qui évoluent quotidiennement). Ces informations sont alimentées automatiquement chaque jour (voire plusieurs fois par jour voire en temps réel) par des flux d'information provenant des sociétés Thomson Reuters, Bloomberg, SIX Telekurs et autres.
+    \item Référentiel Tiers : contient les caractéristiques de tous les Tiers avec qui l'Asset Manager est amené à être en relations côté opérations (Brokers, Dépositaires)
+    \item Référentiel Produits : dernier né des référentiels, il regroupe toutes les caractéristiques des fonds de l'Asset Managers. Sa vocation est plus juridique, commerciale, marketing et statistique.
+\end{itemize}
+
+\par Parler d'un Référentiel Valeurs est utopique, il y en a souvent plusieurs pour ne pas dire un par application. La question d'avoir un Référentiel Maître alimentant des référentiels esclaves plutôt que d'avoir des référentiels alimentés en parallèle et ensuite simplement rapprochés a régulièrement soulevée par la plupart des Asset Managers. Bien que plus fiable cette solution n'a été retenue que par très peu d'Asset Managers car très longue, coûteuse et lourde à mettre en place.
 
 \section{Présentation}
 \subsection{Historique}
 \subsubsection{Création}
-
 \par Fin 2008, Crédit agricole et Société générale décident de fusionner au sein d'une nouvelle société leur filiale respective de gestion d'actifs, CAAM et SGAM. Les deux filiales gèrent alors chacune une gamme d'OPCVM constituée de fonds obligataires, de fonds actions, de fonds alternatifs et de produits structurés ainsi qu'une gamme d'ETF.
 \par Un accord préliminaire est signé le 26 janvier 2009 entre les deux parties prenantes, puis un accord définitif est signé le 9 juillet 2009, stipulant que Crédit agricole possèdera 75\% de la nouvelle entreprise créée et Société générale 25\%, avec une direction générale assurée par Yves Perrier, alors directeur général de CAAM. Pendant la mise en place du projet, la future société est temporairement désignée sous les noms génériques de « CAAM SGAM » et de « Newco » avant que le nom « Amundi » soit officiellement annoncé le 23 octobre 2009. La société est créée le 1er janvier 2010 suite à l'accord de la Commission européenne pour procéder à la fusion. La fusion effective entre les équipes a lieu de manière progressive dans le courant de l'année 2010 et s'accompagne de 260 suppressions de postes dans le monde dont 185 en France, et la création d'environ 60 nouveaux postes dans les branches de gestion des risques et de distribution commerciale.
 \par Avec 670 milliards d'euros d'encours sous gestion à la veille de sa création, Amundi apparaît alors comme le troisième plus grand acteur de la gestion d'actifs en Europe derrière Axa et Allianz, et fait partie des 10 plus grandes sociétés de gestion d'actifs dans le monde.
 
 \subsubsection{Développement et Expansion}
-
 \par Les fonds d'Amundi sont à l'origine principalement distribués par les réseaux bancaires de ses deux actionnaires majoritaires : Crédit agricole, LCL (filiale du Crédit agricole), Société générale et Crédit du Nord (filiale de Société générale), qui totalisent à eux seuls plus de 70\% des flux de collecte nette d'Amundi à ses débuts, le solde étant constitué d'investisseurs institutionnels. La société de gestion élargit progressivement sa base d'investisseurs : en 2015, plus de 60\% des encours de la société proviennent de sources extérieures à ces réseaux bancaires.
 \par En 2012, Amundi élabore un accord de distribution avec la société de gestion TOBAM et prend à cette occasion une participation de 10,6\% au sein du capital de la société (participation qui montera à 20\% en 2016).
 \par En juin 2013, Amundi annonce l'acquisition de la société Smith Breeden Associates aux États-Unis, qui devient effective en octobre 2013. La société, spécialisée dans le domaine de la gestion obligataire en dollars, gère alors 6,4 milliards de dollars d'encours, soit 4,9 milliards d'euros. À l'issue de l'opération, Smith Breeden Associates est renommée « Amundi Smith Breeden LLC » et devient le siège d'Amundi pour ses activités en Amérique du Nord.
@@ -135,25 +172,26 @@ Le groupe Amundi possède des bureaux dans plusieurs pays du monde, notamment en
 \par Le rachat permet notamment à Amundi d'agrandir son réseau de distribution en Italie, en Allemagne et en Autriche, où Pioneer Investments était déjà implantée, tout en développant ses expertises de gestion. L'Italie devient ainsi le second marché d'Amundi après la France. Aux États-Unis, le nom de Pioneer est conservé en étant associé à celui d'Amundi pour créer la marque Amundi Pioneer.
 \par À l'annonce du rachat, Amundi précise envisager un plan de réduction de ses effectifs de 450 personnes sur un total de 5 000 employés dans le monde. En France, un plan de suppression de 134 postes (sur un total de 2 000 salariés en France) est annoncé en octobre 2017.
 
-%-----------------------------------
-%	SUBSECTION 2
-%-----------------------------------
-
 \subsection{Domaine d'activité}
-
 \subsubsection{Asset Management}
 \par L'activité d'Amundi consiste à gérer des fonds d'investissement au sein desquels des investisseurs particuliers, des investisseurs institutionnels ou des entreprises peuvent respectivement placer, collectivement ou de façon individuelle (via mandats et fonds dédiés), leur épargne, leurs capitaux et leur trésorerie, en déléguant à Amundi la gestion de cet argent. Le cœur de métier d'Amundi est donc la « gestion pour compte de tiers » et le chiffre d'affaires du groupe (produit net bancaire) est constitué des frais prélevés sur les encours dont Amundi assure la gestion (frais de souscription et frais de gestion annuels principalement). Amundi gère différents types de fonds, avec notamment une gamme d'OPCVM et une gamme d'ETF, auxquels s'ajoutent des fonds investis en actifs réels et alternatifs, notamment en immobilier, ainsi qu'une offre de produits structurés.
+
 \subsubsection{OPCVM}
 Amundi gère une large gamme d'OPCVM qui se scinde en deux branches principales : l'investissement en actions (fonds actions) et l'investissement en obligations (fonds obligataires et fonds monétaires). À ces deux branches s'ajoutent deux pôles transversaux avec la « gestion diversifiée », ayant pour but de mêler au sein d'un même fonds différentes classes d'actifs (actions, obligations, actifs monétaires, immobilier) et la gestion dite de « performance absolue », qui cherche à dégager chaque année des rendements supérieurs ou égaux à la performance générée par des placements monétaires. La gestion OPCVM était à l'origine la principale expertise de CAAM et de SGAM, dont la collecte était notamment assurée par les réseaux bancaires du Crédit agricole et de Société générale, les conseillers bancaires proposant généralement à leurs clients particuliers et professionnels d'investir dans des OPCVM de leur maison-mère. Depuis la création d'Amundi, la gamme d'OPCVM du groupe est toujours mise en avant par les conseillers bancaires des réseaux du Crédit agricole et de Société générale, mais également de manière grandissante auprès d'investisseurs particuliers ou professionnels hors réseau bancaire, en France et à l'international. Auprès du grand public, Amundi est principalement connue comme étant une société gérant des fonds d'épargne salariale pouvant être souscrits dans le cadre d'un plan d'épargne d'entreprise. Amundi est en effet le leader de l'épargne salariale en France en gérant 42\% des encours totaux sur ce type de support33 et en proposant depuis 2017 un outil de robo-advisoring permettant d'aider les épargnants à choisir la répartition de leur épargne salariale en fonction de leur appétence pour le risque.
+
 \subsubsection{ETF}
 \par Amundi est également présente dans le domaine de la gestion passive en étant un émetteur d'ETF commercialisés sous la marque « Amundi ETF ». À fin 2017, le groupe gère 38 milliards d'euros sur ce type de produits. Historiquement, l'activité d'Amundi ETF est héritée de CASAM, branche de CAAM gérant 65 ETF fin 2009 avant la création d'Amundi, la gamme d'ETF de SGAM ayant pour sa part été transférée en 2009 à Lyxor AM, filiale de Société générale. Amundi ETF recouvre une gamme de produits divisée en deux catégories : les ETF actions (répliquant notamment la performance d'indices boursiers nationaux, régionaux ou sectoriels) et les ETF obligataires (répliquant la performance des obligations d'État ou d'entreprises).
+
 \subsubsection{Actifs réels et alternatifs}
 \par Depuis septembre 2016, Amundi réunit l'ensemble de ses investissements en immobilier, en dette privée, en private equity et en infrastructures sur une plateforme unique dédiée aux « actifs réels et alternatifs ». Lors de sa création, cette branche regroupe 34 milliards d'euros d'actifs sous gestion avec pour objectif d'atteindre 70 milliards d'euros d'actifs sous gestion à l'horizon 2020. Ce pôle est principalement dominé par les investissements en immobilier, qui représentaient à son lancement 14 milliards d'euros d'actifs sous gestion. Parmi les bâtiments acquis par Amundi depuis le lancement de cette plate-forme se trouvent notamment des immeubles du quartier d'affaires de La Défense, dont Cœur Défense (acquis en 2017 en partenariat avec Crédit agricole assurances et Primonial REIM) ainsi que la Tour Hekla (acquise en VEFA en 2017 en partenariat avec Primonial REIM). Les biens immobiliers possédés par Amundi sont portés par des OPCI et des SCPI. Dans le domaine de l'investissement en private equity, Amundi a créé « Amundi Private Equity Funds », une filiale destinée à acquérir des participations dans des entreprises non cotées. L'investissement en dette privée recouvre pour sa part le financement de dettes et de stocks d'entreprises, la presse financière ayant notamment relayé en 2017 le lancement d'un fonds de dette adossé à des stocks physiques de jambon et de parmesan en Italie. Dans le domaine des investissements en infrastructures, Amundi a développé un partenariat avec EDF en créant « Amundi Transition Energétique », filiale détenue à 60\% par Amundi et 40\% par EDF, visant à financer des projets liés aux énergies renouvelables et à l'efficacité énergétique. Amundi a également développé en 2017 un partenariat avec le CEA en créant « Supernova Invest », une société détenue à 40\% par Amundi Private Equity visant à investir dans des projets d'innovations technologiques sur le territoire français.
+
 \subsubsection{Investissement socialement responsable}
 \par En 2018, Amundi prend de nouvelles initiatives dans le domaine de l'ISR. En mars 2018, dans l'univers obligataire (gestion OPCVM), Amundi s’associe à la Société financière internationale (membre du Groupe de la Banque mondiale) pour lancer un fonds d'« obligations vertes » (green bonds) émises par des pays émergents. Avec 1,42 milliard de dollars d'encours à son lancement, le véhicule est alors le plus grand fonds de green bonds à l'échelle mondiale. En octobre 2018, Amundi annonce par ailleurs son « Plan d'action 2021 », qui vise à généraliser à l'ensemble de ses processus d'investissement la prise en compte de critères environnementaux, sociaux et de gouvernance (critères ESG). Le principal objectif du groupe est ainsi qu'en 2021, 100\% de ses encours sous gestion soient investis en respectant des critères ESG, contre 5\% (32 milliards d'euros) lors de son lancement en 2010 et 19\% (280 milliards d'euros) lors de l'annonce du plan en 2018. Amundi s'engage également dans ce plan à tenir compte de critères ESG dans sa politique de vote au sein des assemblées générales des entreprises dont elle est actionnaire.
+
 \subsubsection{Recherche et analyse financière}
 \par Parallèlement à ses activités de gestion, Amundi s'appuie sur un département de recherche et d'analyse spécialisé dans les domaines des marchés financiers et de l'étude de la conjoncture économique mondiale. Le groupe publie gratuitement et en libre accès ses travaux de recherche économique en français et en anglais sur le site Internet « Amundi Research Center ». Amundi diffuse notamment sur ce site une publication mensuelle intitulée « Cross Asset Investment Strategy » dont des extraits sont régulièrement repris par la presse financière. Toujours dans le domaine de la recherche et de l'analyse financière, Amundi organise chaque année l'« Amundi World Investment Forum » au cours duquel différents intervenants extérieurs débattent de sujets macroéconomiques.
 \par Amundi a également recours à des analyses financières externes pour accompagner ses activités de gestion. Dans le cadre de l'entrée en vigueur de la directive européenne MIF2 (MIFID) en janvier 2018, imposant notamment aux sociétés de gestion une plus grande transparence auprès de leurs clients sur ce type de coûts, Amundi a choisi de prendre en charge ces frais de recherche externe sans les facturer à ses clients.
+
 \subsubsection{Services}
 \par Amundi a également lancé en 2016 « Amundi Services », une branche visant à offrir des services à d’autres sociétés de gestion d’actifs. L’offre est inspirée de la plate-forme « Aladdin » de la société américaine BlackRock, et vise à s’adresser à des sociétés de petite et de moyenne taille souhaitant externaliser une partie de leurs activités, en particulier l’exécution des ordres, la gestion des positions, la vérification des règles d’investissement, le calcul d’indicateurs de risques, le suivi des performances et les travaux de « reportings » réglementaires. Amundi Services a pour objectif de générer 50 à 80 millions d'euros de chiffre d’affaires à l’horizon 2020, soit environ 5\% du produit net bancaire du groupe. En 2018, Amundi a annoncé un partenariat entre Goldman Sachs et sa branche Amundi Services, cette dernière assurant la gestion, le contrôle et la supervision de produits de Goldman Sachs Fund Solutions dans le domaine de la gestion quantitative et alternative.
 
@@ -162,7 +200,7 @@ Amundi gère une large gamme d'OPCVM qui se scinde en deux branches principales 
 \par La société possède des bureaux dans la plupart des pays d'Europe pour assurer la distribution locale de ses produits d'investissement. Le groupe dispose notamment de filiales au Luxembourg (Amundi Luxembourg), en Suisse (Amundi Suisse, présent à Genève et Zurich), en Allemagne (Amundi Deutschland GmbH, présent à Francfort et Munich), en Autriche (Amundi Austria GmbH), en Italie (Amundi SGR SpA) et en Espagne (Amundi Iberia SGIIC). Au Luxembourg, Amundi détient également 50,04\% du capital de Fund Channel, une société de distribution de fonds d'investissement détenue en joint-venture avec BNP Paribas qui possède pour sa part 49,96\% de la société.
 \par En Asie-Pacifique, qui représente son principal marché hors Europe, Amundi possède notamment une filiale au Japon (Amundi Japan) issue du rachat de Resona AM par SGAM en 2004 et dispose également de filiales à Hong Kong (Amundi Hong Kong Limited), Taïwan (Amundi Taiwan Limited), Singapour (Amundi Singapore Limited), en Thaïlande (Amundi Mutual Fund Brokerage Securities (Thailand) Company Limited), en Malaisie (Amundi Malaysia Sdn. Bhd) et en Australie (Amundi Asset Management Australia Ltd.). Amundi possède par ailleurs trois autres implantations sur le continent asiatique sous forme de joint-ventures avec des acteurs financiers locaux : en Chine, Amundi détient 33,3\% d'ABC-CA Fund Management, société de gestion issue du partenariat entre l'Agricultural Bank of China et le Crédit agricole79, en Inde, le groupe possède 37\% de SBI Mutual Fund, société de gestion détenue en partenariat avec la State Bank of India (partenariat hérité de SGAM), et en Corée du Sud, Amundi possède 30\% de NH-Amundi Asset Management, une société de gestion d'actifs détenue à 70\% par NongHyup Financial Group of Korea. En 2016, les encours cumulés de ces trois sociétés atteignaient 130 milliards d'euros, comptabilisés à 100\% dans le bilan d'Amundi.
 \par Sur le continent américain, outre son implantation à Durham (Caroline du Nord) issue du rachat de Smith Breeden Associates, Amundi possède aux États-Unis un siège à Boston dédié à sa filiale Amundi Pioneer, depuis lequel sont pilotées les activités d'Amundi en Amérique du Nord13. Le groupe est également présent à Montréal (Amundi Canada Inc.). En Amérique latine, Amundi dispose notamment d'une antenne au Mexique et au Chili, toutes deux rattachées à Amundi Iberia SGIIC.
-\\~\\~\\ \par Au Maghreb et au Moyen-Orient, Amundi possède principalement une antenne au Maroc (Amundi Investment Maroc) dédiée à l'investissement en immobilier. Dans le même pays, le groupe détient également 34\% de la société Wafa Gestion. Le groupe dispose enfin d'une antenne en Arménie (Amundi ACBA) et de deux antennes aux Émirats arabes unis à Abou Dhabi et à Dubaï.
+\par Au Maghreb et au Moyen-Orient, Amundi possède principalement une antenne au Maroc (Amundi Investment Maroc) dédiée à l'investissement en immobilier. Dans le même pays, le groupe détient également 34\% de la société Wafa Gestion. Le groupe dispose enfin d'une antenne en Arménie (Amundi ACBA) et de deux antennes aux Émirats arabes unis à Abou Dhabi et à Dubaï.
 \section{Fiche Technique}
 
 \begin{center}
