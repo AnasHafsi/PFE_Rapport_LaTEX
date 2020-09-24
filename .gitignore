@@ -4,4 +4,8 @@
 *.out
 *.toc
 *.gz
+*.acn
+*.glo
+*.ist
+*.nlo
 .vscode/
