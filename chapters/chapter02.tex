@@ -40,9 +40,9 @@
     \item EAX: Entreprise Architecture \& UX Design, Equipe qui ce charge de tout ce qui design et maquettes d'applications (User Interface, User Experience) (Notamment utilisé dans le projet Alto Investment Research cf. XXXX) 
     \item FOA: Front Office \& Analysis, Equipe qui se charge des projets Front office (cf. Partie I. Chapitre II. Section I. Sous-Section "Organisation d'un Asset Manager")
     \item RIS: Risk Development
-    \item DHB: Dublin Hub Development, précédemment cité dans la Section 2 du Chapitre I. de la partie II. est l'equipe INV basée a Dublin (Irlande). Elle se compose principalement du projet PKC (Position Keeping \& Control) XXXX
-    \item INS: Institutional XXXX
-    \item TTP: Trading \& MO Trade Processing XXXX
+    \item DHB: Dublin Hub Development, précédemment cité dans la Section 2 du Chapitre I. de la partie II. est l'equipe INV basée a Dublin (Irlande). Elle se compose principalement du projet PKC (Position Keeping \& Control) 
+    \item INS: Institutional 
+    \item TTP: Trading \& MO Trade Processing 
     \item MDM: Master Data Management, Equipe a laquelle je suis affecté, la prochaine section de ce chapitre essayera de détailler ses missions, applications gérés, et périmètre de fonctions.
 \end{itemize}
 \par Chaque équipe gère des applications essentiels au activités d'Amundi AM.
@@ -53,7 +53,45 @@
 \end{figure}
 
 \section{MDM: Master Data management}
+\par MDM, ou Master Data Management, est le département responsable de toutes les application gérant les données utilisé par le métier Amundi (Exemple: portefeuilles, positions, données marchés\dots)(communément appelé Master Data).
+\par On dénombre pour le moment sept projets majeurs:
+\begin{itemize}
+    \item Life : C'est le projet d'implémentation de DataHub, au sein d'Amundi, en vue d'une gestion des référentiels tiers en valeurs et indices. Ce projet a aussi pour but de traiter l’obsolescence ainsi que l'optimisation d’une partie du SI Référentiels.
+    \item Medco: ou MediaPlus-core est l'un des projets les plus importants de MDM. C'est le serveur de diffusion, en date du jour, de données principale, notamment pour les portefeuilles et instruments (et tout donnée relatifs). Le but étant de Sérialiser et cacher (transformer en Caches) des objets qui sont des mappings JAVA d'une ou plusieurs tables de base de données. Ceci permet d'avoir un accès direct a ces donnes via l'API MediaPlus-core pour tout client du serveur.
+    \item Refgt: ou Referential Gate est un autre serveur de diffusion, mais pour le coup, en date passée. Le serveur récupère ses données depuis plusieurs sources notamment Medco ainsi que des différentes tables de bases de données, pour les historiser. Le serveur permet aussi d'écrire certain types de data dans les différentes tables de bases de données. 
+    \item Hubref: ou Refrential Hub, est un serveur de routage, il permet selon le besoin de récupérer la data depuis RefGate ou Medco et de la diffuser a son tour. Ce serveur est notamment utilisé par plusieurs applications front comme Alto Investment Research.
+    \item Atlas: Cet application Master Data Management se charge de collecter, intégrer, administrer et diffuser la data qui provient des partenaires d'Amundi AM.
+    \item Indice: est une application/serveur qui gère tout autour de deux types d'instruments financier, les indices et benchmarks. 
+    \item Alto Investment Research - Refrential Widgets : Alto (Amundi Leading Technologies and Operations) Investment Research est une application subdivisée entre 3 équipes, une partie pour l'équipe appartenant à ITS/DOT/COR (équipe qui se charge du développement du Framework Maestro, Framework sur lequel est basé l'application), une partie pour l'équipe appartenant à ITS/INV/FOA (équipe en charge de différents types de Data) et la partie assignée à l'équipe ITS/INV/MDM, la partie sur la quelle on gère la data reçu par Hubref.
+\end{itemize}
 
+\par En plus de ces sept projets on dénombre plusieurs plus petit projets, ou des projets dont le périmètre de fonctions est plutôt éloigné du contexte de mon stage de fin d'études, on peut notamment citer : MDBM, MDQC, FundLife, DQC, Libra \dots   
+\par De mon coté, j'ai été assigné au projet MediaPlus-Core puis au projet Alto Investment Research sur la partie Referential Widgets.
+\par Le chapitre suivant apportera plus d'informations sur les deux projets, ainsi que des schémas expliquant le fonctionnement et l'environnement technique de chaque projet.
+
+
+\chapter{Projets}
+\par Durant le présent chapitre, on essayera de projeter plus d'informations sur les deux projets auquel j'ai eu la chance d'être affecté, à savoir MediaPlus-core et Alto Investment Research. On présentera chaque projet, son utilité, ses fonctions, son architecture ainsi que son environnement technique.
+\section{MediaPlus-Core}
+\par Comme c'est mentionné dans la Partie II. Chapitre I. Section 4, "MediaPlus-core est l'un des projets les plus importants de MDM. C'est le serveur de diffusion, en date du jour, de données principale, notamment pour les portefeuilles et instruments (et tout donnée relatifs). Le but étant de Sérialiser et cacher (transformer en Caches) des objets qui sont des mappings JAVA d'une ou plusieurs tables de base de données. Ceci permet d'avoir un accès direct a ces donnes via l'API MediaPlus-core pour tout client du serveur." 
+\par MediaPlus-Core, est un serveur de cache. On récupère de la data de la base de donnée DECALOG (Un système de gestion de base de données basé sur des serveurs Sybase ASE Adaptive Server Enterprise), on les transforme en cache pour on les exposer soit par EJB (Jakarta Enterprise Beans, anciennement Enterprise JavaBeans), soit par webservice REST.
+\clearpage
+\subsection{Architecture applicative}
+\par 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/Architecture Medco.png}
+    \caption{Architecture applicative Medco}
+    \label{fig:medcoArch}
+\end{figure}
+\par Sur la figure \ref{fig:medcoArch}, on retrouve a gauche les sources de données subdivisés en segments relatifs au type de donnée. Par exemple on retrouve les données référentiels extraite depuis DECALOG (pour les données instruments et produits), les données de position récupéré depuis DECALOG, une Base de donnée HISTO (Un autre type de base de données), ou l'application APK (Amundi Position Keeping) etc\dots
+\par Comme le montre la figure \ref{fig:medcoArch}, Medco fait partie des plus importants serveurs centraux Amundi vu le nombre d'entrées et sorties. 
+
+
+\section{Alto Investment Research}
+\subsection{Cor}
+\subsection{Masterdata SRI}
+\subsection{Referential Widgets}
 
 % Atlas
 % BIFI
