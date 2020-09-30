@@ -77,7 +77,6 @@
 \par MediaPlus-Core, est un serveur de cache. On récupère de la data de la base de donnée DECALOG (Un système de gestion de base de données basé sur des serveurs Sybase ASE Adaptive Server Enterprise), on les transforme en cache pour on les exposer soit par EJB (Jakarta Enterprise Beans, anciennement Enterprise JavaBeans), soit par webservice REST.
 \clearpage
 \subsection{Architecture applicative}
-\par 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{img/Architecture Medco.png}
@@ -85,26 +84,48 @@
     \label{fig:medcoArch}
 \end{figure}
 \par Sur la figure \ref{fig:medcoArch}, on retrouve a gauche les sources de données subdivisés en segments relatifs au type de donnée. Par exemple on retrouve les données référentiels extraite depuis DECALOG (pour les données instruments et produits), les données de position récupéré depuis DECALOG, une Base de donnée HISTO (Un autre type de base de données), ou l'application APK (Amundi Position Keeping) etc\dots
-\par Comme le montre la figure \ref{fig:medcoArch}, Medco fait partie des plus importants serveurs centraux Amundi vu le nombre d'entrées et sorties. 
+\par Au milieu on retrouve les principales fonctions de Medco à savoir le traitement de données (Collecte, Transformation et Distribution), la gestion d'authentification et finalement la réalisation de mapping MediaPlusObject, OpenAML et STPML (Plus de détails et d'explications dans la partie III.).
+\clearpage
+\par Sur la droite on retrouve les sorties, ou les services dont le fonctionnement repose sur Medco. On retrouve par exemple l'ensemble des applications Alto où Medco fournit l'ensemble des informations relatifs au positions, instruments, ordres et portefeuilles; Refgate où Medco fournit un très grand nombre de données primordiales à l'historisation de donnée qu'effectue Refgt; Ainsi que plusieurs autres serveurs/Application tel Hubref, Atlas, APK\dots
+\par Comme le montre la figure \ref{fig:medcoArch}, Medco fait partie des plus importants serveurs centraux Amundi vu le nombre d'entrées et sorties mais aussi de la criticité de diffusion de ces données. En effet hormis le fait que les informations soient critiques et sensibles, chaque retard de diffusion d'information peut rendre cette dernière inutilisable, obsolète.  
+\par La criticité viens aussi du fait que Medco diffuse la donnée pour des serveur/applications qui à leur tour se charge de la diffuser pour d'autres applications (Ex: RefGate) ou qui se charge du routage de donnée (Ex: Hubref) donc si le serveur Medco ne réussi pas à diffuser l'information, plusieurs services et applications au sein d'Amundi ITS seront inutilisable.
 
+\subsection{Architecture Technique}
+\hfill \break
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/medco-arch.png}
+    \caption{Architecture Technique Medco}
+    \label{fig:medcoArchTech}
+\end{figure}
+\pagebreak
+\par Comme le montre la figure \ref{fig:medcoArchTech}, MediaPlus-Core se subdivise en sept sous projets:
+\begin{itemize}
+    \item Mediaplus-core-server: Représente le cœur du projet MediaPlusCore, il contient les objets et méthodes relatif au cache Medco, la partie DAO  et accès au bases de données, les factories pour créations d'objets, Hazelcast (utilisé pour la mise en cache), Rulesolver pour MediaPlus(à voir dans la partie III.), etc\dots
+    \item Mediaplus-core-ejb: Comme le montre le nom, cette partie est responsable de tout ce qui est EJB sur Medco. Elle contient les MediaPlusObject ou les Objets Métiers MediaPlus.
+    \item Mediaplus-core-ejb-server: Est responsable de la diffusion de la partie Mediaplus-core-ejb précédemment cité. Elle contient entre autres les remote Ejb.
+    \item Mediaplus-core-to-OpenAML: Cette partie est responsable de la conversion d'objets MediaPlus en mappings OpenAML (à voir dans la partie III.)
+    \item Mediaplus-core-ws: SousProjet qui contient toute la partie responsable des services REST du projet MediaPlus-core.
+    \item Mediaplus-core-ws-api: Partie responsable des endpoints de l'API programmée et créé par la partie Mediaplus-core-ws. Elle est responsable de la diffusion de donnée sous deux formats : OpenAML et STPML (obsolète)
+    \item Mediaplus-core-ws-doc: Destiné aux autres équipes IT et Métiers, contient la documentation complete de tout les webservice REST qu'offre MediaPlusCore
+\end{itemize}
 
-\section{Alto Investment Research}
-\subsection{Cor}
+\par Tout les projets et sous projets sont developpé par du JAVA 7. Depuis quelques mois, l'équipe est en phase de transition des projets vers du JAVA 8.
+\par Plus de détails concernant d'autres technologies utilisé, ainsi qu'une architecture plus détaillée, seront apporté dans la partie III. de ce présent rapport.
+\par On passe à présent à la deuxième partie de ce chapitre, partie qui traite le projet Alto Investment Research.
+\pagebreak
+\section{Alto: Amundi Leading Technologies \& Operations}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/Alto.png}
+    \caption{Logo Alto}
+    \label{fig:altoLogo}
+\end{figure}
+\par Alto, l'abréviation d'Amundi Leading Technologies \& Operations, est l'un des plus grands projets d'Amundi AM, utilisé par une très grade partie des ingénieurs métier Amundi AM. L'une des plusieurs applications Front Office, elle reste la seule attribuée à l'équipe ITS/INV/MDM.
+\par Le projet est subdivisé en plusieurs parties. Pour des raisons de confidentialité, on traitera uniquement le projet Alto Investment Research.
+\subsection{Alto Investment Research}
+\par Alto Investment Research, anciennement Alto Master Data, est la partie du projet Alto chargé de traiter la data diffusé par le departement MDM, la master data comme definie dans la Partie II. Chapitre I. Section 4.
+\par Le projet est sous forme d'une application Front Office, ou l'utilisateur, en fonction de trois types d'entités financière (Assets, Issuers et Portfolios), peut visualiser plusieurs paramètres financiers, des graphes et tableaux contenant les données diffusé par les différents serveurs/applications. Cette application est notamment utilisé par les ingénieurs métiers Amundi AM (Ex: Traders).
+\par L'application contient plusieurs widgets (cf. figure XXXX). La creation, maintenance et gestion de ces widgets est subdivisée en deux partie: Master Data SRI (géré par l'équipe XXXX), et Referential Widgets (géré par l'équipe ITS/INV/MDM) partie sur laquelle je travaillait.
 \subsection{Masterdata SRI}
 \subsection{Referential Widgets}
-
-% Atlas
-% BIFI
-% DQC
-% EWR
-% FundLife
-% Hubref
-% Libra
-% Life
-% MDBM
-% MDQC
-% Medco
-% OpenAml
-% Refgt
-% Refms
-% rgp
