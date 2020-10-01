@@ -3,7 +3,7 @@
 
 \begingroup
 \let\clearpage\relax
-\chapter{OST/ITS/INV/MDM}
+\chapter{OST/ITS/INV/MDM}\label{mdm}
 \endgroup
 
 \par Comme toutes les grandes multinationales, Amundi AM recense un nombre incalculable de départements, de secteurs ou d'équipes. Dans le chapitre suivant, je vais décrire l’organisation générale des deux équipes où j’ai effectué mon stage, en suivant une approche descendante.
@@ -37,7 +37,7 @@
 \section{INV: Investment Management Platform}
 \par Comme c'est déjà mentionné dans la précédente section, le service INV est subdivisé en plusieurs équipes (comme le montre la figure \ref{fig:inv} ci-dessous).\\
 \begin{itemize}
-    \item EAX: Entreprise Architecture \& UX Design, Equipe qui ce charge de tout ce qui design et maquettes d'applications (User Interface, User Experience) (Notamment utilisé dans le projet Alto Investment Research cf. XXXX) 
+    \item EAX: Entreprise Architecture \& UX Design, Equipe qui ce charge de tout ce qui design et maquettes d'applications (User Interface, User Experience) (Notamment utilisé dans le projet Alto Investment Research cf. Partie II. Chapitre II. Section 2) 
     \item FOA: Front Office \& Analysis, Equipe qui se charge des projets Front office (cf. Partie I. Chapitre II. Section I. Sous-Section "Organisation d'un Asset Manager")
     \item RIS: Risk Development
     \item DHB: Dublin Hub Development, précédemment cité dans la Section 2 du Chapitre I. de la partie II. est l'equipe INV basée a Dublin (Irlande). Elle se compose principalement du projet PKC (Position Keeping \& Control) 
@@ -53,7 +53,7 @@
 \end{figure}
 
 \section{MDM: Master Data management}
-\par MDM, ou Master Data Management, est le département responsable de toutes les application gérant les données utilisé par le métier Amundi (Exemple: portefeuilles, positions, données marchés\dots)(communément appelé Master Data).
+\par MDM, ou Master Data Management, est le département responsable de toutes les application gérant les données utilisé par le métier Amundi (Exemple: portefeuilles, positions, données marchés\dots)(communément appelé Master Data). L'équipe est managé par Mr. Lionel Fournier et regroupe plus de trente-cinq ingénieurs dont plusieurs MOE.
 \par On dénombre pour le moment sept projets majeurs:
 \begin{itemize}
     \item Life : C'est le projet d'implémentation de DataHub, au sein d'Amundi, en vue d'une gestion des référentiels tiers en valeurs et indices. Ce projet a aussi pour but de traiter l’obsolescence ainsi que l'optimisation d’une partie du SI Référentiels.
@@ -124,8 +124,57 @@
 \par Alto, l'abréviation d'Amundi Leading Technologies \& Operations, est l'un des plus grands projets d'Amundi AM, utilisé par une très grade partie des ingénieurs métier Amundi AM. L'une des plusieurs applications Front Office, elle reste la seule attribuée à l'équipe ITS/INV/MDM.
 \par Le projet est subdivisé en plusieurs parties. Pour des raisons de confidentialité, on traitera uniquement le projet Alto Investment Research.
 \subsection{Alto Investment Research}
-\par Alto Investment Research, anciennement Alto Master Data, est la partie du projet Alto chargé de traiter la data diffusé par le departement MDM, la master data comme definie dans la Partie II. Chapitre I. Section 4.
+\par Alto Investment Research, anciennement Alto Master Data, est la partie du projet Alto chargé de traiter la data diffusé par le département MDM, la master data comme définie dans la Partie II. Chapitre I. Section 4.
 \par Le projet est sous forme d'une application Front Office, ou l'utilisateur, en fonction de trois types d'entités financière (Assets, Issuers et Portfolios), peut visualiser plusieurs paramètres financiers, des graphes et tableaux contenant les données diffusé par les différents serveurs/applications. Cette application est notamment utilisé par les ingénieurs métiers Amundi AM (Ex: Traders).
-\par L'application contient plusieurs widgets (cf. figure XXXX). La creation, maintenance et gestion de ces widgets est subdivisée en deux partie: Master Data SRI (géré par l'équipe XXXX), et Referential Widgets (géré par l'équipe ITS/INV/MDM) partie sur laquelle je travaillait.
-\subsection{Masterdata SRI}
+\par L'application contient plusieurs widgets (cf. figure XXXX). La création, maintenance et gestion de ces widgets est subdivisée en deux partie: Master Data SRI (géré par l'équipe GES/RIV (pour Responsible Investments) et l'équipe ITS/INV/FOA), et Referential Widgets (géré par l'équipe ITS/INV/MDM), partie sur laquelle je travaillait.
+
+\subsection{Masterdata SRI ESG}
+\par MasterData SRI ESG, abréviation pour Master Data for Socially Responsible Investing \& Environmental, social and corporate governance, est la partie du projet Alto Investment Research contenant les widgets exposant de la data relative aux investissement socialement responsable et critères environnementaux et sociaux de gouvernance d'entreprises.
+\par Par exemple on retrouve des widgets exposant les émissions Carbonne des entreprises (SRI) (cf. figure \ref{fig:sri}) 
+\par Sur la figure \ref{fig:esg}, on retrouve un widget de type ESG montrant un classement et donnant une note à une entreprise selon son respect des critères environnementaux et sociaux de gouvernance d'entreprises.
+\par Le développement, maintenance, gestion et administration de ces widgets sont délégué à une autre équipe ITS, une équipe chargée de gérer plusieurs applications front office et de réaliser des analyses sur la data, l'équipe ITS/INV/FOA, FOA pour Front Office \& Analysis.
+\begin{figure}[ht]
+    \centering
+    \subfloat[\centering Widget SRI]{{\includegraphics[width=5cm]{img/SRI.png} \label{fig:sri}}}%
+    \qquad \qquad \qquad \qquad
+    \subfloat[\centering Widget ESG]{{\includegraphics[width=5cm]{img/ESG.png} \label{fig:esg} }}%
+    \caption{Exemples de Widgets Masterdata SRI ESG}
+\end{figure}
+\clearpage
 \subsection{Referential Widgets}
+\par Referential Widgets est la section du projet Alto Investment Research contenant les widgets exposant la master data ne figurant pas dans les widgets ESR et SRI. Communément appelé Referential Data, ces données sont indispensables au métier Amundi AM.
+\par Les entités représenté sur ces widgets sont subdivisible en trois types d'entités: des Issuers, des Assets et finalement des Portfolios. Chaque types d'entité à une interface ou écrans diffèrent des autres types (Exemple figure \ref{fig:AssetInvision} pour un Asset figure \ref{fig:IssuerMaestro} pour un Issuer).
+\par Chaque type d'entité est a son tour potentiellement contenant plusieurs classes (par exemple pour des Assets on peut retrouver des Equity, des Bonds, Derivatives, Index, Fixed Income\dots), sauf qu'ils auront globalement la même interface avec des changements mineurs (exemple: on supprime des champs car leur présence est illogique par rapport à la classe représenté). \\
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/AssetInvision.png}
+    \caption{Exemple de widget Referential - Asset (Equity)}
+    \label{fig:AssetInvision}
+\end{figure}
+\clearpage
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/IssuerWidgetIAM.png}
+    \caption{Exemple de widget Referential - Issuer}
+    \label{fig:IssuerMaestro}
+\end{figure}
+\par Sur près de 50 widgets contenu dans l'application Alto Investment Research, les widgets Referentials représentent plus de 85\% des widgets présents, le reste étant constitué de widgets MasterData SRI \& ESG.
+\\~\\
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=4cm]{img/MAES.png}
+    \caption{Logo Maestro}
+    \label{fig:maes}
+\end{figure}
+\par L'application Alto Investment Research, ainsi que les différents widgets Master Data SRI \& ESG et Referential Widgets ont été développé en utilisant la version 5.2.0 puis 5.3.2 du Framework Maestro, un Framework interne d'Amundi-ITS, développé par l'équipe "ITS/DOT/COR Entreprise Framework".
+\clearpage
+\par Il est basé sur la version 8.2 du Framework Angular, développé par Google LLC, et inclus plusieurs surcouches unifiant toutes les applications front Amundi AM, pouvant parfois faciliter des blocs de code.\\
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{img/Maestro.png}
+    \caption{Architecture Maestro}
+    \label{fig:archMaestro}
+\end{figure}
+
+\par L'architecture de Maestro est disponible sur la figure \ref{fig:archMaestro}. Une documentation interne est disponible en interne. Des formations Maestro sont régulièrement organisé par l'équipe "ITS/DOT/COR Entreprise Framework".
+\par Sur le projet Alto Investment Research - Referential Widgets, l'équipe était formé de trois ingénieurs : Imad Saine, Dorian Antoine (Tout deux aussi membre de l'équipe MediaplusCore) et moi même. Des réunions sont organisé régulièrement avec Hilmi Sara, MOA Front Office, de l'équipe GES/COO/GIS/MFO, qui se chargeait d'étudier le besoin avec les ingénieurs métiers Amundi AM, l'analyser et par la suite nous proposer une formulation du problème à traiter ou des directives à suivre côté IT MDM.
