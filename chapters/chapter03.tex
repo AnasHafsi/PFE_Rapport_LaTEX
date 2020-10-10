@@ -38,7 +38,7 @@
 \subsubsection{Confluence}
 \par Créez, collaborez et organisez tout votre travail à un seul et même endroit. Confluence est un espace de travail en équipe où la connaissance et la collaboration se rejoignent. Les pages dynamiques permettent à votre équipe de disposer d'un endroit pour créer, capturer et collaborer sur le projet ou l'idée de votre choix. Grâce aux espaces, votre équipe peut structurer, organiser et partager les tâches, afin que chacun de ses membres dispose d'une visibilité sur les connaissances institutionnelles ainsi que d'un accès aux informations nécessaires pour optimiser le travail.
 \par Confluence s'adresse aux équipes de toute taille et de tout type. Qu'il s'agisse d'équipes ayant des projets stratégiques aux enjeux élevés, qui nécessitent de la rigueur dans leurs pratiques, ou d'équipes à la recherche d'un espace pour développer une culture d'équipe et interagir les unes avec les autres de manière plus ouverte et plus authentique. Grâce à Confluence, votre équipe peut prendre des décisions rapides, gagner en alignement et accomplir plus ensemble. {\tiny source: Atlassian documentation}
-\par La figure \ref{fig:conf} represente un espace confluence.
+\par La figure \ref{fig:conf} représente un espace confluence.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{img/ConfMedco.png}
@@ -86,11 +86,11 @@
 \end{figure}
 \subsection{Server Admin}
 \par Comme le nom l'indique, cette application front est considéré comme un administrateur de tout les serveur/applications Amundi-ITS (Exemple: Refgt, Alto, Medco\dots).
-\par Cette application, developpé pendant les premieres années d'activité d'Amundi AM (pour des raisons de confidentialité je ne citerais pas la date), regroupe trois fonctions majeurs, le monitoring, la gestion et l'affichage de donnée.
+\par Cette application, développé pendant les premières années d'activité d'Amundi AM (pour des raisons de confidentialité je ne citerais pas la date), regroupe trois fonctions majeurs, le monitoring, la gestion et l'affichage de donnée.
 \begin{itemize}
     \item Monitoring: Permet de surveiller et contrôler le serveur MediaPlus-Core.
-    \item Gestion: Permet de contrôler les differents caches MediaPlus-Core (supprimer, recharger, décharger, serialiser, deserialiser).
-    \item Affichage: Afficher les differentes données diffusé par les Ejb MediaPlus-Core.
+    \item Gestion: Permet de contrôler les differents caches MediaPlus-Core (supprimer, recharger, décharger, sérialiser, desérialiser).
+    \item Affichage: Afficher les différentes données diffusé par les Ejb MediaPlus-Core.
 \end{itemize}
 \par La figure \ref{fig:serveradmin} représente l'interface de la partie MediaPlus-core dans ServerAdmin. Des champs ont été caché pour des raisons de confidentialité.
 \begin{figure}[ht]
@@ -151,7 +151,7 @@
 \end{figure} 
 
 \subsection{Documentation Maestro}
-\par Comme c'est deja mentionné dans les chapitres précédents, Maestro est un framework interne Amundi AM basé sur Angular développé par l'équipe ITS/DOT/COR, inclus plusieurs surcouches unifiant toutes les applications front Amundi AM, pouvant parfois faciliter des blocs de code.
+\par Comme c'est déjà mentionné dans les chapitres précédents, Maestro est un framework interne Amundi AM basé sur Angular développé par l'équipe ITS/DOT/COR, inclus plusieurs surcouches unifiant toutes les applications front Amundi AM, pouvant parfois faciliter des blocs de code.
 \par Pour ce ITS/DOT/COR a mis a notre disposition une documentation complete de tout les composant Maestro ajouté par le framework, ainsi que plusieurs exemples de leurs utilisations.
 \begin{figure}[ht]
     \centering
@@ -169,7 +169,7 @@
 \end{itemize} 
 \par Pour des raisons de confidentialité, je me passerais de plusieurs details (notamment noms (deuxième API) et details techniques).
 \subsection{Creation d'API REST}
-\par Apres avoir rejoint l'équipe Medco, J'ai pu développer (from scratch) deux nouvelles API.\\
+\par Après avoir rejoint l'équipe Medco, J'ai pu développer (from scratch) deux nouvelles API.\\
 \begin{itemize}
     \item Countries: L'API des countries est un API essentiel pour le fonctionnement d'autres API ainsi que la diffusions de plusieurs champs. En effet on peut le retrouver dans plusieurs types de données (Exemple: Currency/Devise qui est un Objet indispensable dans le domaine financier). L'API était précédemment diffusé sous format STPML, format déclaré obsolète, et donc fallait migrer et remapper les objets pour pouvoir être compatible. L'API, accessible ar l'URL medco/countries, dispose d'une fonctionnalité de recherche par identifiant, un identifiant obéissant au format ISO 3166-1 alpha-3, accessible par l'URL medco/country/ISO. L'API était doté d'un mécanisme de filtrage/recherche plus puissant qui permettait de filter tout les country par champs, le critère de filtrage était passé par url params. Par exemple je pouvait chercher tout les pays avec un iso débutant par "A" j'utilisait l'URL medco/country?ISO=A.* ou si je voulais diffuser les pays membre de la zone euro j'utilise medco/country?euroZone=true. Pour des raisons de confidentialité, le nombre de champs diffusé reste inconnu mais le mécanisme de recherche était fonctionnel pour un très grand nombre de champs (plus de 10). \\
     \item L'API qu'on nommera Entity: cet objet est un objet sensible au sein de l'écosystème Amundi AM, du coup plusieurs details seront caché. Comme pour les countries, Entity est une données très importante pour les ingénieurs Amundi AM, Seule différence est que l'API n'existait pas sous le format STPML (en tout cas pas dans le format actuel de la data), du coup il fallait coder le mapping OpenAML. En plus des caractéristique précédemment cité dans la partie API Country (recherche par champs\dots), cet API dispose d'un autre paramètres de filtrage qui nous permet d'afficher ou non des champs de data en fonction de l'Entity utilisé, on peut diffuser jusqu'à trois niveaux de data, le niveau le plus bas étant le moins complexe. \\
@@ -179,13 +179,13 @@
 \par L'équipes recevait plusieurs demandes dont on peut citer: \\
 \begin{itemize}
     \item Ajout de champs: Support request le plus reçu par l'équipe. Si une équipe a besoin de diffuser un nouveau champs depuis le différentes bases de données, l'équipe Medco récupère la demande sous forme de ticket JIRA et essaye de la traiter en modifiant les ejb pour diffuser le nouveau champs.
-    \item Remapping de champs: Au cas ou une équipe essaye de changer le mapping précrée, l'équipe se charge, après avoir reçu l'accord des équipe métier concerné par le champ, de le faire tout en alertant les autres équipes gérant des projets ou le champ etait utilisé. 
-    \item Supression de champs: La suppression de champ est une operation rare dans l'équipe Medco. Elle occurre généralement lorsqu'un champ est obsolète ou dont la diffusion peut engendrer des erreurs dans les résultats émis par d'autres champs/services. Comme pour le remapping, l'équipe contacte les gestionnaire métier du champs, pour avoir une confirmation et procède à la suppression de champs tout en notifiant les équipes pouvant utiliser le champ en question.
+    \item Remapping de champs: Au cas ou une équipe essaye de changer le mapping pré-crée, l'équipe se charge, après avoir reçu l'accord des équipe métier concerné par le champ, de le faire tout en alertant les autres équipes gérant des projets ou le champ était utilisé. 
+    \item Suppression de champs: La suppression de champ est une operation rare dans l'équipe Medco. Elle occurre généralement lorsqu'un champ est obsolète ou dont la diffusion peut engendrer des erreurs dans les résultats émis par d'autres champs/services. Comme pour le remapping, l'équipe contacte les gestionnaire métier du champs, pour avoir une confirmation et procède à la suppression de champs tout en notifiant les équipes pouvant utiliser le champ en question.
 \end{itemize}
 \par De mon coté j'ai pu traiter les deux premiers types de support requests à savoir la creation et le remapping de champs. 
 \section{Alto Investment Research}
 \par Sur Alto Investment Research Referential Widgets, le but était de reproduire les designs présent sur InVision par ordre proposé par Sara Hilmi MOA Front Office, de l'équipe GES/COO/GIS/MFO.
-\par Avant ma venue dans l'equipe, les widgets presents sur Alto Investment Research etait sous le format present dans la figure \ref{fig:altoV1}.
+\par Avant ma venue dans l'équipe, les widgets présents sur Alto Investment Research était sous le format présent dans la figure \ref{fig:altoV1}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{img/ancienecrans.png}
@@ -193,7 +193,7 @@
     \label{fig:altoV1}
 \end{figure} 
 \par Le but était de répliquer les écrans figurant dans la figure \ref{fig:altoInv}.
-\par Le resultat realisé figure dans la figure \ref{fig:altoCurent}.
+\par Le résultat réalisé figure dans la figure \ref{fig:altoCurent}.
 \par Plusieurs informations ont ete modifiée pour des raisons de confidentialité.
 \par Mon travail consistait a réaliser les écrans (partie front), ainsi que les API Maestro pour récupérer la data depuis les differents serveurs et applications Medco (Refgt et Hubref).
 \begin{figure}[ht]
@@ -209,4 +209,4 @@
     \label{fig:altoCurent}
 \end{figure}
 \chapter{Conclusion générale}
-\include{chapters/conclusion.tex}
+\input{chapters/conclusion.tex}

@@ -37,13 +37,13 @@
 \section{INV: Investment Management Platform}
 \par Comme c'est déjà mentionné dans la précédente section, le service INV est subdivisé en plusieurs équipes (comme le montre la figure \ref{fig:inv} ci-dessous).\\
 \begin{itemize}
-    \item EAX: Entreprise Architecture \& UX Design, Equipe qui ce charge de tout ce qui design et maquettes d'applications (User Interface, User Experience) (Notamment utilisé dans le projet Alto Investment Research cf. Partie II. Chapitre II. Section 2) 
-    \item FOA: Front Office \& Analysis, Equipe qui se charge des projets Front office (cf. Partie I. Chapitre II. Section I. Sous-Section "Organisation d'un Asset Manager")
+    \item EAX: Entreprise Architecture \& UX Design, Équipe qui ce charge de tout ce qui design et maquettes d'applications (User Interface, User Experience) (Notamment utilisé dans le projet Alto Investment Research cf. Partie II. Chapitre II. Section 2) 
+    \item FOA: Front Office \& Analysis, Équipe qui se charge des projets Front office (cf. Partie I. Chapitre II. Section I. Sous-Section "Organisation d'un Asset Manager")
     \item RIS: Risk Development
-    \item DHB: Dublin Hub Development, précédemment cité dans la Section 2 du Chapitre I. de la partie II. est l'equipe INV basée a Dublin (Irlande). Elle se compose principalement du projet PKC (Position Keeping \& Control) 
+    \item DHB: Dublin Hub Development, précédemment cité dans la Section 2 du Chapitre I. de la partie II. est l'équipe INV basée a Dublin (Irlande). Elle se compose principalement du projet PKC (Position Keeping \& Control) 
     \item INS: Institutional 
     \item TTP: Trading \& MO Trade Processing 
-    \item MDM: Master Data Management, Equipe a laquelle je suis affecté, la prochaine section de ce chapitre essayera de détailler ses missions, applications gérés, et périmètre de fonctions.
+    \item MDM: Master Data Management, Équipe a laquelle je suis affecté, la prochaine section de ce chapitre essayera de détailler ses missions, applications gérés, et périmètre de fonctions.
 \end{itemize}
 \par Chaque équipe gère des applications essentiels au activités d'Amundi AM.
 \begin{figure}[ht]
@@ -110,7 +110,7 @@
     \item Mediaplus-core-ws-doc: Destiné aux autres équipes IT et Métiers, contient la documentation complete de tout les webservice REST qu'offre MediaPlusCore
 \end{itemize}
 
-\par Tout les projets et sous projets sont developpé par du JAVA 7. Depuis quelques mois, l'équipe est en phase de transition des projets vers du JAVA 8.
+\par Tout les projets et sous projets sont développé par du JAVA 7. Depuis quelques mois, l'équipe est en phase de transition des projets vers du JAVA 8.
 \par Plus de détails concernant d'autres technologies utilisé, ainsi qu'une architecture plus détaillée, seront apporté dans la partie III. de ce présent rapport.
 \par On passe à présent à la deuxième partie de ce chapitre, partie qui traite le projet Alto Investment Research.
 \pagebreak
@@ -143,7 +143,7 @@
 \clearpage
 \subsection{Referential Widgets}
 \par Referential Widgets est la section du projet Alto Investment Research contenant les widgets exposant la master data ne figurant pas dans les widgets ESR et SRI. Communément appelé Referential Data, ces données sont indispensables au métier Amundi AM.
-\par Les entités représenté sur ces widgets sont subdivisible en trois types d'entités: des Issuers, des Assets et finalement des Portfolios. Chaque types d'entité à une interface ou écrans diffèrent des autres types (Exemple figure \ref{fig:AssetInvision} pour un Asset figure \ref{fig:IssuerMaestro} pour un Issuer).
+\par Les entités représenté sur ces widgets sont subdivisée en trois types d'entités: des Issuers, des Assets et finalement des Portfolios. Chaque types d'entité à une interface ou écrans diffèrent des autres types (Exemple figure \ref{fig:AssetInvision} pour un Asset figure \ref{fig:IssuerMaestro} pour un Issuer).
 \par Chaque type d'entité est a son tour potentiellement contenant plusieurs classes (par exemple pour des Assets on peut retrouver des Equity, des Bonds, Derivatives, Index, Fixed Income\dots), sauf qu'ils auront globalement la même interface avec des changements mineurs (exemple: on supprime des champs car leur présence est illogique par rapport à la classe représenté). \\
 \begin{figure}[ht]
     \centering
