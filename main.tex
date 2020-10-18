@@ -33,13 +33,13 @@
 
 \usepackage{appendix}
 \usepackage{listings}
-
+\usepackage{url}
 
 % VARIABLES
 
 \makeatletter
 \title{Rapport du projet de fin d'études}\let\title\@title
-\newcommand{\subtitle}{Master Data Management - Media Plus Core}
+\newcommand{\subtitle}{Master Data Management}
 \newcommand{\years}{2019 - 2020}
 \newcommand{\footpage}{ Page \thepage \ / \pageref{LastPage}}
 
@@ -114,5 +114,8 @@
 \input{chapters/chapter02.tex}
 \part{Étude technique et réalisations}
 \input{chapters/chapter03.tex}
+\part*{Annexe}
+\addcontentsline{toc}{part}{Annexe}
+\input{sections/webographie.tex}
 
 \end{document}
